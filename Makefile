@@ -5,10 +5,10 @@ install_requirements:
 	@pip install -r requirements.txt
 
 check_code:
-	@flake8 scripts/* test_package1/*.py
+	@flake8 scripts/* test_package/*.py
 
 black:
-	@black scripts/* test_package1/*.py
+	@black scripts/* test_package/*.py
 
 test:
 	@coverage run -m pytest tests/*.py
@@ -22,8 +22,8 @@ clean:
 	@rm -f .coverage
 	@rm -fr */__pycache__ */*.pyc __pycache__
 	@rm -fr build dist
-	@rm -fr test_package1-*.dist-info
-	@rm -fr test_package1.egg-info
+	@rm -fr test_package-*.dist-info
+	@rm -fr test_package.egg-info
 
 install:
 	@pip install . -U
